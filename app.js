@@ -1,3 +1,4 @@
+require("dotenv").config();
 const db = require("./dbMoleculas.js");
 const express = require("express");
 const app = express();
@@ -51,7 +52,7 @@ app.post("/estructuras", async (req, res) => {
 
 db.conectar().then(() => {
     console.log("Conectado a la base de datos.");
-    app.listen(() =>
-    console.log(`Servidor escuchando.`)
+    app.listen(PORT, () =>
+    console.log(`Servidor escuchando en el puerto ${PORT}.`)
   );
 });
