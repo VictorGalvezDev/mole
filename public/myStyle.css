@@ -1,0 +1,144 @@
+/************************************************* iconos ******************************************************/
+#menuItems {
+    font-size: 2em;
+}
+
+#idMenu:hover {
+    transform: scale(1.1);
+    color: rgba(60, 140, 252, 0.955);
+}
+
+#buscadorEstructuras {
+    height: fit-content !important;
+}
+
+#addEstructura {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 2em;
+    color: white;
+    background-color: rgb(21, 164, 26);
+    border: black solid;
+}
+
+#addEstructura:hover {
+    background-color: rgb(22, 135, 25);
+}
+
+#offcanvas {
+    background-color: black;
+    color: white;
+    border-top: grey solid;
+    border-left: grey solid;
+}
+
+#botonClose {
+    background-color: white;
+}
+
+#listaEstructuras {
+    border-block: grey solid;
+    overflow-x: hidden !important;
+}
+
+
+.borrarEstructura {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0%;
+    font-size: 0.7em;
+    background-color: transparent;
+    border: 0;
+    color: rgba(167, 0, 0, 0.726);
+}
+
+.opcionLista:hover>.borrarEstructura {
+    display: block;
+}
+
+.fa-list {
+    background-color: transparent;
+    color: white;
+
+}
+
+.opcionLista {
+    background-color: rgba(48, 9, 220, 0.838);
+    margin: 1rem;
+    border-style: solid;
+    border-color: black;
+    transition: all 0.1s ease-in-out;
+
+    overflow-x: hidden;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.opcionLista:hover {
+    transform: scale(1.1);
+    background-color: blue;
+}
+
+
+
+input[type=search] {
+    background-color: transparent;
+    color: white;
+}
+
+input[type=search]:focus {
+    background-color: transparent;
+    color: white;
+}
+
+#titulo {
+    font-family: 'Anton', sans-serif;
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 2.0em;
+    background: linear-gradient(to right, #1FC3CF 0%, #FFFF4D 50%, #CF1512 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animacionTitulo 2s linear infinite;
+    ;
+}
+
+@keyframes animacionTitulo {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    border-bottom: grey solid;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(7, 145, 243);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(7, 145, 243);
+}

@@ -1,0 +1,20 @@
+{
+  "name": "moleculeame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "Server-Start": "node app.js",
+    "platillaEstructuras": "pug -c -D -n plantillaEstructuras -o public plantillaEstructuras.pug",
+    "plantillaAtomos": "pug -c -D -n plantillaAtomos -o public plantillaAtomos.pug",
+    "cargarEstructuras": "node cargarEstructuras.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4"
+  }
+}
