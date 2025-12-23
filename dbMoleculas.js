@@ -56,8 +56,56 @@ const Atomo = new mongoose.model("Atomo", AtomoEsquema);
 
 exports.conectar = async function () {
   mongoose.set('strictQuery', false)
-  mongoose.connect(dbUrl);
+  mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tls: true,
+    tlsAllowInvalidCertificates: true
+  });
 };
+
+// exports.conectar = async function () {
+//   try {
+//     mongoose.set('strictQuery', false);
+    
+//     console.log("Intentando conectar a MongoDB...");
+//     console.log("URL:", dbUrl ? "Definida" : "No definida");
+    
+//     // CONEXIÓN CON OPCIONES SSL/TLS
+//     await mongoose.connect(dbUrl, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//       ssl: true,
+//       tls: true,
+//       // tlsAllowInvalidCertificates: true, // DESCOMENTA SI SIGUE FALLANDO
+//     });
+    
+//     console.log("✅ MongoDB conectado exitosamente!");
+//     return true;
+//   } catch (error) {
+//     console.error("❌ FALLA CRÍTICA MongoDB:");
+//     console.error("Tipo error:", error.name);
+//     console.error("Mensaje:", error.message);
+//     console.error("Stack:", error.stack);
+    
+//     // Intenta conexión alternativa sin SSL (SOLO PARA DEBUG)
+//     console.log("Intentando conexión alternativa...");
+//     try {
+//       await mongoose.connect(dbUrl.replace('+srv', ''), {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//         ssl: false,
+//         tls: false,
+//       });
+//       console.log("✅ Conectado sin SSL (modo inseguro)");
+//       return true;
+//     } catch (error2) {
+//       console.error("❌ También falló sin SSL");
+//       process.exit(1);
+//     }
+//   }
+// };
 
 exports.cerrarConexion = async function () {
   await mongoose.disconnect();
@@ -95,8 +143,8 @@ buscarNombreAtomo = async function (nombre) {
   return await query.exec();
 };
 
-ajustarNombre = function(nombre) {
-  return nombre.replaceAll("/","").replaceAll("?","").replaceAll("%","").replaceAll("#","").trim()
+ajustarNombre = function (nombre) {
+  return nombre.replaceAll("/", "").replaceAll("?", "").replaceAll("%", "").replaceAll("#", "").trim()
 }
 
 //operaciones Crud
